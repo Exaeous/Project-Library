@@ -11,9 +11,11 @@ function Book(id, title, author, pages, status) {
 }
 
 function addBookToLibrary(title, author, pages, status) {
-  let id = crypto.randomUUID();
+  const id = crypto.randomUUID();
   const newBook = new Book(id, title, author, pages, status);
   return myLibrary.push(newBook);
 }
 
-addBookToLibrary("test", "test", "test", "test");
+addBookToLibrary("The Overstory", "Richard Powers", 512, "Read");
+addBookToLibrary("Dracula", "Bram Stoker", 418, "Not Read");
+addBookToLibrary("Clous Atlas", "David Mitchell", 528, "Read");
