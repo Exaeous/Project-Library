@@ -24,6 +24,8 @@ function addBookToLibrary(
   return myLibrary.push(newBook);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, "Not read yet");
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, "Not Read");
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, "Read");
+addBookToLibrary("1984", "George Orwell", 328, "Not Read");
 
 console.log(myLibrary);
