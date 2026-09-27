@@ -2,7 +2,7 @@
 
 const myLibrary = [];
 
-function Book(name, author, pages, readStatus) {
+function Book(name, author, pages, readStatus, id) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
@@ -10,14 +10,17 @@ function Book(name, author, pages, readStatus) {
   this.author = author;
   this.pages = pages;
   this.readStatus = readStatus;
-
-  this.info = function () {
-    return `${this.name} by ${this.author}, ${this.pages} pages, ${this.readStatus}`;
-  };
+  this.id = id;
 }
 
-function addBookToLibrary(name, author, pages, readStatus) {
-  const newBook = new Book(name, author, pages, readStatus);
+function addBookToLibrary(
+  name,
+  author,
+  pages,
+  readStatus,
+  id = crypto.randomUUID(),
+) {
+  const newBook = new Book(name, author, pages, readStatus, id);
   return myLibrary.push(newBook);
 }
 
