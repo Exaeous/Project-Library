@@ -1,5 +1,7 @@
 "use strict";
 
+const myLibrary = [];
+
 function Book(name, author, pages, readStatus) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -14,6 +16,11 @@ function Book(name, author, pages, readStatus) {
   };
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "Not read");
+function addBookToLibrary(name, author, pages, readStatus) {
+  const newBook = new Book(name, author, pages, readStatus);
+  return myLibrary.push(newBook);
+}
 
-console.log(theHobbit.info()); // "The Hobbit by J.R.R. Tolkien, 295 pages, Not read"
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, "Not read yet");
+
+console.log(myLibrary);
